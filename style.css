@@ -1,0 +1,233 @@
+/* Personnalisation des polices et animations */
+body {
+    scroll-behavior: smooth;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: #ca8a04; /* Jaune doré */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.gallery-item {
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    background-color: #111;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    opacity: 0.7;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.btn-primary {
+    background: #ca8a04;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.btn-outline {
+    border: 1px solid white;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+:root {
+    --ks-gold: #EAB308; /* Correspond au doré du logo */
+}
+
+.text-yellow-600 {
+    color: var(--ks-gold) !important;
+}
+
+.btn-primary {
+    background-color: var(--ks-gold);
+    color: black;
+}
+
+#whatsapp-form button {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+}
+
+#whatsapp-form button:hover {
+    box-shadow: 0 0 25px rgba(234, 179, 8, 0.4);
+    transform: translateY(-2px);
+}
+
+input:focus, select:focus, textarea:focus {
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.1);
+}
+
+/* Style du Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Fond noir pur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Toujours au-dessus */
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.loader-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loader-logo {
+    width: 150px; /* Ajuste selon la taille voulue */
+    margin-bottom: 20px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.loader-bar {
+    width: 100px;
+    height: 2px;
+    background: rgba(234, 179, 8, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-bar::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #EAB308; /* L'or de ton logo */
+    animation: loading 1.5s infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes loading {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Classe pour cacher le preloader */
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Style pour la section Map */
+iframe {
+    filter: grayscale(1) invert(0.9) contrast(1.2); /* Effet de carte sombre/élégante */
+    transition: filter 0.5s ease;
+}
+
+iframe:hover {
+    filter: grayscale(0) invert(0) contrast(1); /* La carte reprend ses couleurs au survol */
+}
+
+#location .container {
+    max-width: 1000px;
+}
+
+.whatsapp-submit-btn {
+    width: 100%;
+    background-color: #25D366; /* Couleur officielle WhatsApp */
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-submit-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-submit-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.whatsapp-sticky {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-sticky:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-sticky img {
+    width: 35px;
+}
+
+.social-icon {
+    color: #4b5563; /* Gris par défaut */
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ca8a04; /* Or au survol */
+    transform: translateY(-5px);
+}
+
+footer p {
+    font-size: 1.1rem; /* Augmente la taille générale du texte */
+}
